@@ -1,2 +1,5 @@
-sh -c javac -classpath .:target/dependency/ -d . $(find . -type f -name '*.java')
-java -classpath .:target/dependency/* Main
+printf "Running...\n\n"
+
+cd src
+javac *.java
+java Main
