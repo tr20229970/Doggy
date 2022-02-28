@@ -1,0 +1,5 @@
+entrypoint = "src/main.jva"
+language = "java"
+pattern = "**/*.java"
+javac src/main.java
+java src/main
