@@ -75,19 +75,18 @@ class Main
 
 
             }
-
-
-
-
     }
 
+
+    // Adds the Dog to the kennel if the selected input is not taken
     private static void add(DoggieKennel[] inputArray, Scanner stringReader, int input)
     {
 
         if (!(inputArray[input] == null))
         {
             System.out.println("Sorry the Kennel, is Occupied, " + inputArray[input].getName());
-        } else
+        }
+        else
         {
             inputArray[input] = new DoggieKennel();
             System.out.println("Good News! The Kennel is available! \nWhat is the dog's name?");
@@ -97,6 +96,9 @@ class Main
             System.out.println(inputArray[input].getName() + (" has been taken to Kennel [" + (input + 1) + "]"));
         }
     }
+
+
+    // Removes the dog from the Array if the array, if its found in the array
    private static boolean remove(DoggieKennel[] inputArray, String name)
     {
         for (int i = 0; i < inputArray.length - 1; i++)
@@ -110,6 +112,8 @@ class Main
         return false;
     }
 
+
+    // Prints out the statues of  each kennel
     private static String printAll(DoggieKennel[] inputArray)
     {
 

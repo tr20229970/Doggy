@@ -5,14 +5,17 @@
  | @File DoggieKennel.java   @Modified 2.28.22  |
  | @Comment : An Array Exercise, that handles   |
  | input, removal, indexing, and printing       |
+ | -------------------------------------------- |
+ | @Methods setName(String), setBreed(String)   |
+ | getName(), getBreed()                        |
  -----------------------------------------------
 */
 
 class DoggieKennel
 {
 
-    String name;
-    String breed;
+    private String name;
+    private String breed;
 
     DoggieKennel()
     {
@@ -43,6 +46,6 @@ class DoggieKennel
     }
     public String toString()
     {
-        return "Named, " + name + " Breed, "  + breed;
+        return "Named, " + getName() + " Breed, "  + getBreed();
     }
 }

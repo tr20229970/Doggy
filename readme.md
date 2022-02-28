@@ -58,4 +58,4 @@
 
 
 [<h3> 💾 Google Drive 💾 <h3> ](https://drive.google.com/file/d/1qv5muQt9ls8_pbK57Qdk549F02qUoMsl/view)
-[![<h3>Run on Repl.it </h3>](https://repl.it/badge/github/tr20229970/Doggy)](https://repl.it/github/tr20229970/Doggy)
+[![Run on Repl.it](https://repl.it/badge/github/tr20229970/Doggy)](https://repl.it/github/tr20229970/Doggy)
