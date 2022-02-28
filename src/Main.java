@@ -40,11 +40,8 @@ class Main
 
                 //Remove Dog
                 case 2:
-                    System.out.print("What Dog would you like to remove?");
-                    if (remove(kennelArray, stringReader.nextLine()))
-                        System.out.println("Dog was removed ");
-                    else
-                        System.out.println("Oh, no. That Dog was Not Found in are System!");
+                    System.out.println("What Dog would you like to remove?\n");
+                    System.out.println(remove(kennelArray, intReader.nextInt()));
                     input = -1;
                     break;
 
@@ -98,25 +95,28 @@ class Main
     }
 
 
-    // Removes the dog from the Array if the array, if its found in the array
-   private static boolean remove(DoggieKennel[] inputArray, String name)
+    // Removes the dog from the Array if the array, if it is found in the array
+   private static String remove(DoggieKennel[] inputArray, int input)
     {
-        for (int i = 0; i < inputArray.length - 1; i++)
+        String output = "";
+        if(inputArray[input - 1] != null)
         {
-            if (!(inputArray[i] == null) && inputArray[i].getName().equals(name))
-            {
-                inputArray[i] = null;
-                return true;
-            }
+            output += "Dog Removed, " + inputArray[input - 1];
+            inputArray[input - 1] = null;
         }
-        return false;
+        else
+        {
+            return "Oh, no. That Dog was Not Found in are System!";
+        }
+        return output;
+
     }
 
 
     // Prints out the statues of  each kennel
     private static String printAll(DoggieKennel[] inputArray)
     {
-
+        int count = 0;
         String output = "The Dogs in are Kennel Currently are \n";
 
         for (int i = 0; i < inputArray.length; i++)
@@ -124,8 +124,14 @@ class Main
             if (inputArray[i] != null)
                 output += "Kennel [" + (i + 1) + "] is " + inputArray[i] + "\n";
             else
-                output +=  "Kennel [" + (i + 1) + "] is Empty \n";
+            {
+                count++;
+                output += "Kennel [" + (i + 1) + "] is Empty \n";
+            }
         }
+
+        if(count == 10)
+            output = "\nAll Kennels are Empty";
         return output;
     }
 }
