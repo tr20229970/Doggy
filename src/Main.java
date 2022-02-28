@@ -1,3 +1,13 @@
+/*
+  ------------------------------------------------
+ | @Name DoggieDayCare                          |
+ | @By Tyler Romanowski      @Created  2.17.22  |
+ | @File Main.java           @Modified 2.28.22  |
+ | @Comment : An Array Exercise, that handles   |
+ | input, removal, indexing, and printing       |
+ -----------------------------------------------
+*/
+
 import java.util.Scanner;
 
 class Main
@@ -20,11 +30,15 @@ class Main
         {
             switch (input)
             {
+
+                // Add Dog
                 case 1:
                     System.out.println("\nPlease enter a kennel number from 1 to 10");
                     add(kennelArray, stringReader, intReader.nextInt() - 1);
                     input = -1;
                     break;
+
+                //Remove Dog
                 case 2:
                     System.out.print("What Dog would you like to remove?");
                     if (remove(kennelArray, stringReader.nextLine()))
@@ -33,18 +47,26 @@ class Main
                         System.out.println("Oh, no. That Dog was Not Found in are System!");
                     input = -1;
                     break;
+
+                // Prints occupied kennels
                 case 3:
                     System.out.print(printAll(kennelArray));
                     input = -1;
                     break;
+
+                // Prints out the Options
                 case 4:
                     System.out.println("1. Add a dog to a specific kennel number.\n2. Remove a dog from a kennel.\n3. List occupied kennel numbers along with the name & breed \n4. Options \n5. Exit");
                     input = -1;
                     break;
+
+                 // Exit
                 case 5:
                     System.out.println("Thanks for Visiting, have a great day");
                     input++;
                     break;
+
+                 // Default
                 default:
                     System.out.println("\nPlease select another option \n\033[3m(if you are not sure press [4])\033[0m");
                     input = intReader.nextInt();

@@ -1,8 +1,18 @@
+/*
+  ------------------------------------------------
+ | @Name DoggieDayCare                          |
+ | @By Tyler Romanowski      @Created  2.17.22  |
+ | @File DoggieKennel.java   @Modified 2.28.22  |
+ | @Comment : An Array Exercise, that handles   |
+ | input, removal, indexing, and printing       |
+ -----------------------------------------------
+*/
+
 class DoggieKennel
 {
 
-    String name = "";
-    String breed = "";
+    String name;
+    String breed;
 
     DoggieKennel()
     {
