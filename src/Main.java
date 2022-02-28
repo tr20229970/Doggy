@@ -96,7 +96,7 @@ class Main
         for (int i = 0; i < inputArray.length; i++)
         {
             if (inputArray[i] != null)
-                output += "Kennel [" + (i + 1) + "] has " + inputArray[i] + "\n";
+                output += "Kennel [" + (i + 1) + "] is " + inputArray[i] + "\n";
             else
                 output +=  "Kennel [" + (i + 1) + "] is Empty \n";
         }
