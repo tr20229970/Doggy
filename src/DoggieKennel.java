@@ -33,6 +33,6 @@ class DoggieKennel
     }
     public String toString()
     {
-        return "Dogs Name = " + name + " Breeds =  "  + breed;
+        return "Name, " + name + "Breed, "  + breed;
     }
 }
