@@ -81,7 +81,7 @@ class Main
         {
             if (!(inputArray[i] == null) && inputArray[i].getName().equals(name))
             {
-                inputArray = null;
+                inputArray[i] = null;
                 return true;
             }
         }
