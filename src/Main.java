@@ -12,20 +12,24 @@ import java.util.Scanner;
 
 class Main
 {
-    private static Scanner intReader = new Scanner(System.in);
-    private static Scanner stringReader = new Scanner(System.in);
-    private static DoggieKennel[] kennelArray = new DoggieKennel[10];
+    final static int MAX_KENNEL_SIZE = 10;
+    final private static Scanner intReader = new Scanner(System.in);
+    final private static Scanner stringReader = new Scanner(System.in);
+    final private static DoggieKennel[] kennelArray = new DoggieKennel[MAX_KENNEL_SIZE];
 
+    // Main Method
     public static void main(String[] args)
     {
 
-
-
-
         System.out.println("Hello! Welcome to Doggie Day Care \uD83D\uDC3E\n1. Add a dog to a specific kennel number.\n2. Remove a dog from a kennel.\n3. List occupied kennel numbers along with the name & breed\n4. Options \n5. Exit");
+        optionsLoop(intReader.nextInt());
 
-        int input = intReader.nextInt();
+    }
 
+
+    // Options loop
+    private static void optionsLoop(int input)
+    {
         while (input != 6)
         {
             switch (input)
@@ -37,6 +41,7 @@ class Main
                     add(intReader.nextInt() - 1);
                     input = -1;
                     break;
+
 
                 //Remove Dog
                 case 2:
@@ -57,21 +62,22 @@ class Main
                     input = -1;
                     break;
 
-                 // Exit
+
+                // Exit
                 case 5:
                     System.out.println("Thanks for Visiting, have a great day");
                     input++;
                     break;
 
-                 // Default
+                // Default
                 default:
                     System.out.println("\nPlease select another option \n\033[3m(if you are not sure press [4])\033[0m");
                     input = intReader.nextInt();
                     break;
-                }
-
-
             }
+
+
+        }
     }
 
 
@@ -80,9 +86,8 @@ class Main
     {
 
         if (!(kennelArray[input] == null))
-        {
             System.out.println("Sorry the Kennel, is Occupied, " + kennelArray[input].getName());
-        }
+
         else
         {
             kennelArray[input] = new DoggieKennel();
@@ -105,9 +110,7 @@ class Main
             kennelArray[input - 1] = null;
         }
         else
-        {
             return "Oh, no. That Dog was Not Found in are System!";
-        }
         return output;
 
     }
@@ -117,21 +120,21 @@ class Main
     private static String printAll()
     {
         int count = 0;
-        String output = "The Dogs in are Kennel Currently are \n";
+        StringBuilder output = new StringBuilder("The Dogs in are Kennel Currently are \n");
 
         for (int i = 0; i < kennelArray.length; i++)
         {
             if (kennelArray[i] != null)
-                output += "Kennel [" + (i + 1) + "] is " + kennelArray[i] + "\n";
+                output.append("Kennel [").append(i + 1).append("] is ").append(kennelArray[i]).append("\n");
             else
             {
                 count++;
-                output += "Kennel [" + (i + 1) + "] is Empty \n";
+                output.append("Kennel [").append(i + 1).append("] is Empty \n");
             }
         }
 
-        if(count == 10)
-            output = "\nAll Kennels are Empty";
-        return output;
+        if(count == MAX_KENNEL_SIZE)
+            output = new StringBuilder("\nAll Kennels are Empty");
+        return output.toString();
     }
 }
