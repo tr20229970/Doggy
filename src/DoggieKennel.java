@@ -44,6 +44,7 @@ class DoggieKennel
     {
         return breed;
     }
+
     public String toString()
     {
         return " Named: (" + getName() + ") Breed: ("  + getBreed() +")";

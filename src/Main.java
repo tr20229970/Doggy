@@ -12,14 +12,14 @@ import java.util.Scanner;
 
 class Main
 {
+    private static Scanner intReader = new Scanner(System.in);
+    private static Scanner stringReader = new Scanner(System.in);
+    private static DoggieKennel[] kennelArray = new DoggieKennel[10];
 
     public static void main(String[] args)
     {
 
-        Scanner intReader = new Scanner(System.in);
-        Scanner stringReader = new Scanner(System.in);
 
-        DoggieKennel[] kennelArray = new DoggieKennel[10];
 
 
         System.out.println("Hello! Welcome to Doggie Day Care \uD83D\uDC3E\n1. Add a dog to a specific kennel number.\n2. Remove a dog from a kennel.\n3. List occupied kennel numbers along with the name & breed\n4. Options \n5. Exit");
@@ -34,20 +34,20 @@ class Main
                 // Add Dog
                 case 1:
                     System.out.println("\nPlease enter a kennel number from 1 to 10");
-                    add(kennelArray, stringReader, intReader.nextInt() - 1);
+                    add(intReader.nextInt() - 1);
                     input = -1;
                     break;
 
                 //Remove Dog
                 case 2:
                     System.out.println("What Dog would you like to remove?\n");
-                    System.out.println(remove(kennelArray, intReader.nextInt()));
+                    System.out.println(remove(intReader.nextInt()));
                     input = -1;
                     break;
 
                 // Prints occupied kennels
                 case 3:
-                    System.out.print(printAll(kennelArray));
+                    System.out.print(printAll());
                     input = -1;
                     break;
 
@@ -76,33 +76,33 @@ class Main
 
 
     // Adds the Dog to the kennel if the selected input is not taken
-    private static void add(DoggieKennel[] inputArray, Scanner stringReader, int input)
+    private static void add(int input)
     {
 
-        if (!(inputArray[input] == null))
+        if (!(kennelArray[input] == null))
         {
-            System.out.println("Sorry the Kennel, is Occupied, " + inputArray[input].getName());
+            System.out.println("Sorry the Kennel, is Occupied, " + kennelArray[input].getName());
         }
         else
         {
-            inputArray[input] = new DoggieKennel();
+            kennelArray[input] = new DoggieKennel();
             System.out.println("Good News! The Kennel is available! \nWhat is the dog's name?");
-            inputArray[input].setName(stringReader.nextLine());
+            kennelArray[input].setName(stringReader.nextLine());
             System.out.println("What is the dog's breed?");
-            inputArray[input].setBreed(stringReader.nextLine());
-            System.out.println(inputArray[input].getName() + (" has been taken to Kennel [" + (input + 1) + "]"));
+            kennelArray[input].setBreed(stringReader.nextLine());
+            System.out.println(kennelArray[input].getName() + (" has been taken to Kennel [" + (input + 1) + "]"));
         }
     }
 
 
     // Removes the dog from the Array if the array, if it is found in the array
-   private static String remove(DoggieKennel[] inputArray, int input)
+   private static String remove(int input)
     {
         String output = "";
-        if(inputArray[input - 1] != null)
+        if(kennelArray[input - 1] != null)
         {
-            output += "Dog Removed, " + inputArray[input - 1];
-            inputArray[input - 1] = null;
+            output += "Dog Removed, " + kennelArray[input - 1];
+            kennelArray[input - 1] = null;
         }
         else
         {
@@ -114,15 +114,15 @@ class Main
 
 
     // Prints out the statues of  each kennel
-    private static String printAll(DoggieKennel[] inputArray)
+    private static String printAll()
     {
         int count = 0;
         String output = "The Dogs in are Kennel Currently are \n";
 
-        for (int i = 0; i < inputArray.length; i++)
+        for (int i = 0; i < kennelArray.length; i++)
         {
-            if (inputArray[i] != null)
-                output += "Kennel [" + (i + 1) + "] is " + inputArray[i] + "\n";
+            if (kennelArray[i] != null)
+                output += "Kennel [" + (i + 1) + "] is " + kennelArray[i] + "\n";
             else
             {
                 count++;
