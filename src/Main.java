@@ -27,7 +27,7 @@ class Main
     public static void main(String[] args)
     {
 
-        System.out.print("Hello! Welcome to Doggie Day Care \n1. Add a dog to a specific kennel number.\n2. Remove a dog from a kennel.\n3. List occupied kennel numbers \n4. Options  \n5. Exit\nInput?");
+        System.out.print("Hello! Welcome to Doggie Day Care \n1. Add a dog to a specific kennel number.\n2. Remove a dog from a kennel.\n3. List occupied kennel numbers \n4. Options  \n5. Exit\nInput? ");
         optionsLoop(intReader.nextInt());
 
     }
@@ -56,7 +56,7 @@ class Main
 
                 //Remove Dog
                 case 2:
-                    System.out.println("What Kennel is the Dog in ? ");
+                    System.out.println("What Kennel is the Dog in? ");
                     System.out.println(remove(intReader.nextInt()));
                     input = -1;
                     break;
