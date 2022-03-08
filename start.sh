@@ -1,5 +1,5 @@
 printf "Running...\n\n"
 
 cd src
-javac -encoding UTF8 *.java*.java
+javac -encoding UTF8 *.java
 java Main
