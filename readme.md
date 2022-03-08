@@ -1,5 +1,5 @@
 <h1> Doggie Day Care! 🐾 </h1>
-<h2>1. Menu 🔠</h2>
+<h2>1. Menu 🐕‍🦺</h2>
     
     Hello! Welcome to Doggie Day Care
     1. Add a dog to a specific kennel number.
@@ -8,7 +8,7 @@
     4. Options
     5. Exit
 
-<h2>2. Example ✨</h2>
+<h2>2. Example 🐶</h2>
 
 
     Hello! Welcome to Doggie Day Care 🐾
@@ -48,7 +48,7 @@
     5
     Thanks for Visiting, have a great day
 
-<h2>3. Credits 🔥</h2>
+<h2>3. Credits 🐕</h2>
 
     Made by Tyler Romanowski
     AP Computer Science

@@ -17,6 +17,7 @@ class Main
     final private static Scanner stringReader = new Scanner(System.in);
     final private static DoggieKennel[] kennelArray = new DoggieKennel[MAX_KENNEL_SIZE];
 
+    
     //-------------------------------------------------
     // @Method  - Main
     // @Args    - String[] args
