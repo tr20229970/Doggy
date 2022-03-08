@@ -2,7 +2,7 @@
   ------------------------------------------------
  | @Name DoggieDayCare                          |
  | @By Tyler Romanowski      @Created  2.17.22  |
- | @File Main.java           @Modified 2.28.22  |
+ | @File Main.java           @Modified 3.08.22  |
  | @Comment : An Array Exercise, that handles   |
  | input, removal, indexing, and printing       |
  -----------------------------------------------
@@ -17,17 +17,28 @@ class Main
     final private static Scanner stringReader = new Scanner(System.in);
     final private static DoggieKennel[] kennelArray = new DoggieKennel[MAX_KENNEL_SIZE];
 
-    // Main Method
+    //-------------------------------------------------
+    // @Method  - Main
+    // @Args    - String[] args
+    // @Comment - Main Methods, Prints out the
+    // Greetings, and the brings the code to the
+    // optionsLoop
+    // ------------------------------------------------
     public static void main(String[] args)
     {
 
-        System.out.println("Hello! Welcome to Doggie Day Care \uD83D\uDC3E\n1. Add a dog to a specific kennel number.\n2. Remove a dog from a kennel.\n3. List occupied kennel numbers along with the name & breed\n4. Options \n5. Exit");
+        System.out.println("Hello! Welcome to Doggie Day Care 🐾\n1. Add a dog to a specific kennel number.🐕\n2. Remove a dog from a kennel.🐩\n3. List occupied kennel numbers 🔢\n4. Options 🍀 \n5. Exit 🗝️");
         optionsLoop(intReader.nextInt());
 
     }
 
 
-    // Options loop
+    //-------------------------------------------------
+    // @Method  - OptionsLoop
+    // @Args    - int input
+    // @Pre     - Any #
+    // @Comment - Gives the User a List of Options
+    // ------------------------------------------------
     private static void optionsLoop(int input)
     {
         while (input != 6)
@@ -45,7 +56,7 @@ class Main
 
                 //Remove Dog
                 case 2:
-                    System.out.println("What Dog would you like to remove?\n");
+                    System.out.println("What Kennel is the Dog in ? 🐶");
                     System.out.println(remove(intReader.nextInt()));
                     input = -1;
                     break;
@@ -71,7 +82,7 @@ class Main
 
                 // Default
                 default:
-                    System.out.println("\nPlease select another option \n\033[3m(if you are not sure press [4])\033[0m");
+                    System.out.println("\nPlease select another option \n\033[3m(To Access Menu Type [4])\033[0m");
                     input = intReader.nextInt();
                     break;
             }
@@ -80,8 +91,13 @@ class Main
         }
     }
 
-
-    // Adds the Dog to the kennel if the selected input is not taken
+    //-------------------------------------------------
+    // @Method  - add
+    // @Args    - int input
+    // @Pre     - Any int
+    // @Comment - Adds the Dog to the kennel if the
+    // selected input is not taken
+    // ------------------------------------------------
     private static void add(int input)
     {
 
@@ -100,7 +116,13 @@ class Main
     }
 
 
-    // Removes the dog from the Array if the array, if it is found in the array
+    //-------------------------------------------------
+    // @Method  - Remove
+    // @Args    - int input
+    // @Pre     - Any int
+    // @Comment - Removes the Dog to the kennel if the
+    // selected kennel has a "Dog" in it
+    // ------------------------------------------------
    private static String remove(int input)
     {
         String output = "";
@@ -116,25 +138,28 @@ class Main
     }
 
 
-    // Prints out the statues of  each kennel
+    //-------------------------------------------------
+    // @Method  - printAll
+    // @Comment - Prints the Status of all the kennels
+    // ------------------------------------------------
     private static String printAll()
     {
         int count = 0;
-        StringBuilder output = new StringBuilder("The Dogs in are Kennel Currently are \n");
+        String output = ("The Dogs in are Kennel Currently are \n");
 
         for (int i = 0; i < kennelArray.length; i++)
         {
             if (kennelArray[i] != null)
-                output.append("Kennel [").append(i + 1).append("] is ").append(kennelArray[i]).append("\n");
+                output += "Kennel [" + (i + 1) + "] is " + (kennelArray[i]) + "\n";
             else
             {
                 count++;
-                output.append("Kennel [").append(i + 1).append("] is Empty \n");
+                output += "Kennel [" + (i + 1) + "] is Empty \n";
             }
         }
 
         if(count == MAX_KENNEL_SIZE)
-            output = new StringBuilder("\nAll Kennels are Empty");
-        return output.toString();
+            output = ("\nAll Kennels are Empty");
+        return output;
     }
 }
