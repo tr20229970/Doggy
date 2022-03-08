@@ -56,16 +56,18 @@ class Main
 
                 //Remove Dog
                 case 2:
-                    System.out.println("What Kennel is the Dog in ? 🐶");
+                    System.out.println("What Kennel is the Dog in ? ");
                     System.out.println(remove(intReader.nextInt()));
                     input = -1;
                     break;
+
 
                 // Prints occupied kennels
                 case 3:
                     System.out.print(printAll());
                     input = -1;
                     break;
+
 
                 // Prints out the Options
                 case 4:
@@ -79,6 +81,7 @@ class Main
                     System.out.println("Thanks for Visiting, have a great day");
                     input++;
                     break;
+
 
                 // Default
                 default:
