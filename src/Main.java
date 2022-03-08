@@ -86,8 +86,6 @@ class Main
                     input = intReader.nextInt();
                     break;
             }
-
-
         }
     }
 
