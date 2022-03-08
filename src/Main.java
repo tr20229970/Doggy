@@ -27,7 +27,7 @@ class Main
     public static void main(String[] args)
     {
 
-        System.out.println("Hello! Welcome to Doggie Day Care 🐾\n1. Add a dog to a specific kennel number.🐕\n2. Remove a dog from a kennel.🐩\n3. List occupied kennel numbers 🔢\n4. Options 🍀 \n5. Exit 🗝️");
+        System.out.println("Hello! Welcome to Doggie Day Care \n1. Add a dog to a specific kennel number.\n2. Remove a dog from a kennel.\n3. List occupied kennel numbers \n4. Options  \n5. Exit ️");
         optionsLoop(intReader.nextInt());
 
     }
