@@ -12,6 +12,7 @@ import java.util.Scanner;
 
 class Main
 {
+
     final static int MAX_KENNEL_SIZE = 10;
     final private static Scanner intReader = new Scanner(System.in);
     final private static Scanner stringReader = new Scanner(System.in);
@@ -28,7 +29,7 @@ class Main
     public static void main(String[] args)
     {
 
-        System.out.print("Hello! Welcome to Doggie Day Care \n1. Add a dog to a specific kennel number.\n2. Remove a dog from a kennel.\n3. List occupied kennel numbers \n4. Options  \n5. Exit\nInput? ");
+        System.out.print("Hello! Welcome to Doggie Day Care \n1. Add a dog to a specific kennel number.\n2. Remove a dog from a kennel.\n3. List occupied kennel numbers & dog info \n4. Options  \n5. Exit\nInput? ");
         optionsLoop(intReader.nextInt());
 
     }
@@ -42,7 +43,7 @@ class Main
     // ------------------------------------------------
     private static void optionsLoop(int input)
     {
-        while (input != 6)
+        while (input != -999)
         {
             switch (input)
             {
@@ -72,7 +73,7 @@ class Main
 
                 // Prints out the Options
                 case 4:
-                    System.out.println("1. Add a dog to a specific kennel number.\n2. Remove a dog from a kennel.\n3. List occupied kennel numbers along with the name & breed \n4. Options \n5. Exit");
+                    System.out.println("1. Add a dog to a specific kennel number.\n2. Remove a dog from a kennel.\n3. List occupied kennel numbers & dog info \n4. Options \n5. Exit");
                     input = -1;
                     break;
 
@@ -80,7 +81,7 @@ class Main
                 // Exit
                 case 5:
                     System.out.println("Thanks for Visiting, have a great day");
-                    input++;
+                    input = -999;
                     break;
 
 
@@ -102,6 +103,11 @@ class Main
     // ------------------------------------------------
     private static void add(int input)
     {
+        if(input >= MAX_KENNEL_SIZE || input < 0)
+        {
+            System.out.println("Invalid Input");
+            return;
+        }
 
         if (!(kennelArray[input] == null))
             System.out.println("Sorry the Kennel, is Occupied, " + kennelArray[input].getName());
@@ -127,6 +133,9 @@ class Main
     // ------------------------------------------------
    private static String remove(int input)
     {
+        if(input >= MAX_KENNEL_SIZE || input < 0)
+            return "Not A Valid Index";
+
         String output = "";
         if(kennelArray[input - 1] != null)
         {
@@ -134,7 +143,7 @@ class Main
             kennelArray[input - 1] = null;
         }
         else
-            return "Oh, no. That Dog was Not Found in are System!";
+            return "Oh, no. There is no Dog in the Kennel!";
         return output;
 
     }
