@@ -119,7 +119,7 @@ class Main
             kennelArray[input].setName(stringReader.nextLine());
             System.out.println("What is the dog's breed?");
             kennelArray[input].setBreed(stringReader.nextLine());
-            System.out.println(kennelArray[input].getName() + (" has been taken to Kennel [" + (input + 1) + "]"));
+            System.out.println(kennelArray[input] + (" has been taken to Kennel [" + (input + 1) + "]"));
         }
     }
 
