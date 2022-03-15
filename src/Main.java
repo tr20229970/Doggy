@@ -1,11 +1,22 @@
 /*
   ------------------------------------------------
- | @Name DoggieDayCare                          |
+ | @Project DoggieDayCare                       |
  | @By Tyler Romanowski      @Created  2.17.22  |
- | @File Main.java           @Modified 3.08.22  |
- | @Comment : An Array Exercise, that handles   |
+ | @File Main.java           @Modified 3.14.22  |
+ | @P-Comment : An Array Exercise, that handles |
  | input, removal, indexing, and printing       |
- -----------------------------------------------
+ |----------------------------------------------|
+ | @Comment: The Runner class for DoggieDaycare |
+ | handles the menu, user input, adding,        |
+ | removing, and listing occupied kennels.      |
+ | Along with that it also handles invalid      |
+ | detection, and overall manipulation of the   |
+ | array in witch the dog information is stored |
+ | The main purpose of this class is to inform  |
+ | the user, and allow multiplication of the    |
+ | array in a user simplified approach          |
+ ------------------------------------------------
+
 */
 
 import java.util.Scanner;
@@ -16,7 +27,7 @@ class Main
     final static int MAX_KENNEL_SIZE = 10;
     final private static Scanner intReader = new Scanner(System.in);
     final private static Scanner stringReader = new Scanner(System.in);
-    final private static DoggieKennel[] kennelArray = new DoggieKennel[MAX_KENNEL_SIZE];
+    final private static Dog[] kennelArray = new Dog[MAX_KENNEL_SIZE];
 
     
     //-------------------------------------------------
@@ -110,11 +121,11 @@ class Main
         }
 
         if (!(kennelArray[input] == null))
-            System.out.println("Sorry the Kennel, is Occupied, " + kennelArray[input].getName());
+            System.out.println("Sorry the Kennel, is Occupied" + kennelArray[input]);
 
         else
         {
-            kennelArray[input] = new DoggieKennel();
+            kennelArray[input] = new Dog();
             System.out.println("Good News! The Kennel is available! \nWhat is the dog's name?");
             kennelArray[input].setName(stringReader.nextLine());
             System.out.println("What is the dog's breed?");
@@ -156,7 +167,7 @@ class Main
     private static String printAll()
     {
         int count = 0;
-        String output = ("The Dogs in are Kennel Currently are \n");
+        String output = ("The Dogs in the Kennel Currently :  \n");
 
         for (int i = 0; i < kennelArray.length; i++)
         {

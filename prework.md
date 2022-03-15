@@ -14,7 +14,7 @@
 
 
 
-<h2>2. DoggieKennel Methods Needed 🐕</h2>
+<h2>2. Dog Methods Needed 🐕</h2>
 
 
     1. setName

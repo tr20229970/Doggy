@@ -1,30 +1,33 @@
 /*
   ------------------------------------------------
- | @Name DoggieDayCare                          |
+ | @Project DoggieDayCare                       |
  | @By Tyler Romanowski      @Created  2.17.22  |
- | @File DoggieKennel.java   @Modified 2.28.22  |
- | @Comment : An Array Exercise, that handles   |
+ | @File Dog.java            @Modified 2.28.22  |
+ | @P-Comment : An Array Exercise, that handles |
  | input, removal, indexing, and printing       |
  | -------------------------------------------- |
  | @Methods setName(String), setBreed(String)   |
  | getName(), getBreed()                        |
+ |--------------------------------------------- |
+ | @Comment Dog class, creates a new dog, and   |
+ | stores its name and Breed                    |
  -----------------------------------------------
 */
 
-class DoggieKennel
+class Dog
 {
 
     private String name;
     private String breed;
 
-    DoggieKennel()
+    Dog()
     {
         name = "";
         breed = "";
     }
 
 
-    DoggieKennel(String inputName, String inputBreed)
+    Dog(String inputName, String inputBreed)
     {
         name = inputName;
         breed = inputBreed;
