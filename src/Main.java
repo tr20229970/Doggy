@@ -40,7 +40,13 @@ class Main
     public static void main(String[] args)
     {
 
-        System.out.print("Hello! Welcome to Doggie Day Care \n1. Add a dog to a specific kennel number.\n2. Remove a dog from a kennel.\n3. List occupied kennel numbers & dog info \n4. Options  \n5. Exit\nInput? ");
+        System.out.print("Hello! Welcome to Doggie Day Care \n" +
+                "1. Add a dog to a specific kennel number.\n" +
+                "2. Remove a dog from a kennel.\n" +
+                "3. List occupied kennel numbers & dog info \n" +
+                "4. Options  \n" +
+                "5. Exit\n" +
+                "Input? ");
         optionsLoop(intReader.nextInt());
 
     }
@@ -62,7 +68,7 @@ class Main
                 // Add Dog
                 case 1:
                     System.out.println("\nPlease enter a kennel number from 1 to 10");
-                    add(intReader.nextInt() - 1);
+                    System.out.print(add(intReader.nextInt() - 1));
                     input = -1;
                     break;
 
@@ -84,7 +90,12 @@ class Main
 
                 // Prints out the Options
                 case 4:
-                    System.out.println("1. Add a dog to a specific kennel number.\n2. Remove a dog from a kennel.\n3. List occupied kennel numbers & dog info \n4. Options \n5. Exit");
+                    System.out.println("" +
+                            "1. Add a dog to a specific kennel number.\n" +
+                            "2. Remove a dog from a kennel.\n" +
+                            "3. List occupied kennel numbers & dog info \n" +
+                            "4. Options \n" +
+                            "5. Exit");
                     input = -1;
                     break;
 
@@ -112,26 +123,24 @@ class Main
     // @Comment - Adds the Dog to the kennel if the
     // selected input is not taken
     // ------------------------------------------------
-    private static void add(int input)
+    private static String add(int input)
     {
         if(input >= MAX_KENNEL_SIZE || input < 0)
         {
-            System.out.println("Invalid Input");
-            return;
+            return "Invalid Input";
         }
 
         if (!(kennelArray[input] == null))
-            System.out.println("Sorry the Kennel, is Occupied" + kennelArray[input]);
+            return "Sorry the Kennel, is Occupied" + kennelArray[input];
 
-        else
-        {
-            kennelArray[input] = new Dog();
-            System.out.println("Good News! The Kennel is available! \nWhat is the dog's name?");
-            kennelArray[input].setName(stringReader.nextLine());
-            System.out.println("What is the dog's breed?");
-            kennelArray[input].setBreed(stringReader.nextLine());
-            System.out.println(kennelArray[input] + (" has been taken to Kennel [" + (input + 1) + "]"));
-        }
+
+        kennelArray[input] = new Dog();
+        System.out.println("Good News! The Kennel is available! \nWhat is the dog's name?");
+        kennelArray[input].setName(stringReader.nextLine());
+        System.out.println("What is the dog's breed?");
+        kennelArray[input].setBreed(stringReader.nextLine());
+        return kennelArray[input] + (" has been taken to Kennel [" + (input + 1) + "]");
+
     }
 
 

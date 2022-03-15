@@ -10,7 +10,7 @@
  | getName(), getBreed()                        |
  |--------------------------------------------- |
  | @Comment Dog class, creates a new dog, and   |
- | stores its name and Breed                    |
+ | stores its name and Breed.                   |
  -----------------------------------------------
 */
 
