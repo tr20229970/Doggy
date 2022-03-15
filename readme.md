@@ -1,6 +1,6 @@
 <h1> Doggie Day Care! 🐾 </h1>
 <h2>1. Menu 🐕‍🦺</h2>
-    
+     
     Hello! Welcome to Doggie Day Care
     1. Add a dog to a specific kennel number.
     2. Remove a dog from a kennel.

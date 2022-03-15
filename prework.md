@@ -1,7 +1,12 @@
+<h1><center> DoggieDayCare </center></h1>
 <h1><center> Pre-Work </center></h1>
 
+<h2>1. What this Program Does? 🐩</h2>
+> The Runner class for DoggieDaycare handles the menu, user input, adding, removing, and listing occupied kennels.Along with that it also handles invalid detection, and overall manipulation of the array in witch the dog information is stored The main purpose of this class is to inform the user, and allow multiplication of the array in a user simplified approach
 
-<h2>1. Main Methods Needed 🐶</h2>
+
+
+<h2>2. Main Methods Needed 🐶</h2>
 
 
     1. Add
@@ -14,7 +19,7 @@
 
 
 
-<h2>2. Dog Methods Needed 🐕</h2>
+<h2>3. Dog Methods Needed 🐕</h2>
 
 
     1. setName
@@ -29,11 +34,3 @@
         Returns the Dogs Name & Breed
 
 
-<h2>3. Comments 🐕‍🦺</h2>
-
-
-    1. This project is an array Exercise, the easit way to 
-    handle this is the 2 java files, one of the object and one of 
-    Main code. The Main file will have a method for Adding a "Dog"
-    to the kennel. One for Removing a dog from a kennel. One for
-    Printing the kennel information
