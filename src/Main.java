@@ -153,17 +153,16 @@ class Main
     // ------------------------------------------------
    private static String remove(int input)
     {
-        if(input >= MAX_KENNEL_SIZE || input <= 0)
+        if(input > MAX_KENNEL_SIZE || input <= 0)
             return "Not A Valid Index";
+        if(kennelArray[input - 1] == null)
+            return "Oh, no. There is no Dog in the Kennel!";
 
         String output = "";
-        if(kennelArray[input - 1] != null)
-        {
-            output += "Dog Removed, " + kennelArray[input - 1];
-            kennelArray[input - 1] = null;
-        }
-        else
-            return "Oh, no. There is no Dog in the Kennel!";
+
+        output += "Dog Removed, " + kennelArray[input - 1];
+        kennelArray[input - 1] = null;
+
         return output;
 
     }
@@ -171,12 +170,14 @@ class Main
 
     //-------------------------------------------------
     // @Method  - printAll
+    // @Post - returns the current state of all the
+    // kennels
     // @Comment - Prints the Status of all the kennels
     // ------------------------------------------------
     private static String printAll()
     {
         int count = 0;
-        String output = ("The Dogs in the Kennel Currently :  \n");
+        String output = "The Dogs in the Kennel Currently :  \n";
 
         for (int i = 0; i < kennelArray.length; i++)
         {
@@ -190,7 +191,8 @@ class Main
         }
 
         if(count == MAX_KENNEL_SIZE)
-            output = ("\nAll Kennels are Empty");
+            return "\nAll Kennels are Empty";
+
         return output;
     }
 }
