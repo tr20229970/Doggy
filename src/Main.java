@@ -2,7 +2,7 @@
   ------------------------------------------------
  | @Project DoggieDayCare                       |
  | @By Tyler Romanowski      @Created  2.17.22  |
- | @File Main.java           @Modified 3.14.22  |
+ | @File Main.java           @Modified 3.21.22  |
  | @P-Comment : An Array Exercise, that handles |
  | input, removal, indexing, and printing       |
  |----------------------------------------------|
@@ -153,7 +153,7 @@ class Main
     // ------------------------------------------------
    private static String remove(int input)
     {
-        if(input >= MAX_KENNEL_SIZE || input < 0)
+        if(input >= MAX_KENNEL_SIZE || input <= 0)
             return "Not A Valid Index";
 
         String output = "";
