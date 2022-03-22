@@ -76,7 +76,7 @@ class Main
                 //Remove Dog
                 case 2:
                     System.out.println("What Kennel is the Dog in? ");
-                    System.out.println(remove(intReader.nextInt()));
+                    System.out.println(remove(intReader.nextInt() - 1));
                     input = -1;
                     break;
 
@@ -155,13 +155,13 @@ class Main
     {
         if(input > MAX_KENNEL_SIZE || input <= 0)
             return "Not A Valid Index";
-        if(kennelArray[input - 1] == null)
+        if(kennelArray[input] == null)
             return "Oh, no. There is no Dog in the Kennel!";
 
         String output = "";
 
-        output += "Dog Removed, " + kennelArray[input - 1];
-        kennelArray[input - 1] = null;
+        output += "Dog Removed, " + kennelArray[input ];
+        kennelArray[input] = null;
 
         return output;
 
