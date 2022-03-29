@@ -153,7 +153,7 @@ class Main
     // ------------------------------------------------
    private static String remove(int input)
     {
-        if(input > MAX_KENNEL_SIZE || input <= 0)
+        if(input > MAX_KENNEL_SIZE || input < 0)
             return "Not A Valid Index";
         if(kennelArray[input] == null)
             return "Oh, no. There is no Dog in the Kennel!";
